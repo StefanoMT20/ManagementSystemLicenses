@@ -5,12 +5,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+
+
 import java.awt.Toolkit;
 import java.awt.Color;
 import java.awt.Button;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import java.awt.Font;
 import javax.swing.JPasswordField;
@@ -103,15 +107,28 @@ public class Login extends JFrame {
 		});
 
 		lblNewLabel_2.setBounds(-55, 11, 420, 275);
-		lblNewLabel_2.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\System\\img\\bg.jpg.png"));
+		lblNewLabel_2.setIcon(new ImageIcon(Login.class.getResource("/img/bg.jpg.png")));
 		panel.add(lblNewLabel_2);
 		
 		Button btnIngresar = new Button("Ingresar");
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ingresar();
+				char [] clave = txtContraseña.getPassword();
+				String claveFinal = new String(clave);
+				
+				if(txtUsuario.getText().equals("admin")& claveFinal.equals("admin") ) {
+					dispose();
+					JOptionPane.showMessageDialog(null, "Bienvenido", "Listo", JOptionPane.INFORMATION_MESSAGE);
+					frmBienvenido frmBienvenido = new frmBienvenido();
+					frmBienvenido.setVisible(true);
+					
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Error, Usuario o Contraseña Incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
+
 		btnIngresar.setForeground(Color.WHITE);
 		btnIngresar.setBackground(new Color(241,57,83) );
 		btnIngresar.setBounds(10, 440, 288, 30);
@@ -146,7 +163,5 @@ public class Login extends JFrame {
 		contentPane.add(txtContraseña);
 	}
 
-	protected void ingresar() {
-		
-	}
+	
 }
