@@ -19,6 +19,9 @@ import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
@@ -50,7 +53,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\Steff\\Proyectos\\System\\img\\9ea98f4bcb9bcc6cf6e223478c08f2ca98129d0f.ico"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/img/9ea98f4bcb9bcc6cf6e223478c08f2ca98129d0f.ico")));
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 324, 530);
@@ -104,6 +107,11 @@ public class Login extends JFrame {
 		panel.add(lblNewLabel_2);
 		
 		Button btnIngresar = new Button("Ingresar");
+		btnIngresar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ingresar();
+			}
+		});
 		btnIngresar.setForeground(Color.WHITE);
 		btnIngresar.setBackground(new Color(241,57,83) );
 		btnIngresar.setBounds(10, 440, 288, 30);
@@ -136,5 +144,9 @@ public class Login extends JFrame {
 		txtContraseña = new JPasswordField();
 		txtContraseña.setBounds(43, 388, 212, 30);
 		contentPane.add(txtContraseña);
+	}
+
+	protected void ingresar() {
+		
 	}
 }
