@@ -6,12 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-<<<<<<< HEAD
 import bean.Usuario;
 import mantenimiento.GestionUsuario;
-=======
-
->>>>>>> 9a148b9599dc0d0870a3eca9c94caa26aea6289e
 
 import java.awt.Toolkit;
 import java.awt.Color;
@@ -118,7 +114,6 @@ public class Login extends JFrame {
 		Button btnIngresar = new Button("Ingresar");
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
 				ingresar();
 			}
 		});
@@ -127,27 +122,6 @@ public class Login extends JFrame {
 		btnIngresar.setForeground(Color.WHITE);
 		btnIngresar.setBackground(new Color(241,57,83) );
 		btnIngresar.setBounds(10, 437, 298, 30);
-=======
-				char [] clave = txtContraseña.getPassword();
-				String claveFinal = new String(clave);
-				
-				if(txtUsuario.getText().equals("admin")& claveFinal.equals("admin") ) {
-					dispose();
-					JOptionPane.showMessageDialog(null, "Bienvenido", "Listo", JOptionPane.INFORMATION_MESSAGE);
-					frmBienvenido frmBienvenido = new frmBienvenido();
-					frmBienvenido.setVisible(true);
-					
-				}
-				else {
-					JOptionPane.showMessageDialog(null, "Error, Usuario o Contraseña Incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		});
-
-		btnIngresar.setForeground(Color.WHITE);
-		btnIngresar.setBackground(new Color(241,57,83) );
-		btnIngresar.setBounds(10, 440, 288, 30);
->>>>>>> 9a148b9599dc0d0870a3eca9c94caa26aea6289e
 		contentPane.add(btnIngresar);
 		
 		txtUsuario = new JTextField();
@@ -179,7 +153,6 @@ public class Login extends JFrame {
 		contentPane.add(txtContraseña);
 	}
 
-<<<<<<< HEAD
 	protected void ingresar() {
 		String usuario = txtUsuario.getText();
 		String clave = String.valueOf(txtContraseña.getPassword());
@@ -207,7 +180,5 @@ public class Login extends JFrame {
 		
 	}
 
-=======
->>>>>>> 9a148b9599dc0d0870a3eca9c94caa26aea6289e
 	
 }
