@@ -58,7 +58,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/img/9ea98f4bcb9bcc6cf6e223478c08f2ca98129d0f.ico")));
+		
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 324, 530);
