@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import bean.Usuario;
+import clases.Usuario;
 import util.MySqlConexion;
 
 public class GestionUsuario {

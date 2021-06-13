@@ -1,4 +1,4 @@
-package bean;
+package clases;
 
 public class Usuario {
 	
