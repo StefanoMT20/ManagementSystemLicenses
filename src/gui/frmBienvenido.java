@@ -28,8 +28,13 @@ import javax.swing.JTabbedPane;
 public class frmBienvenido extends JFrame {
 	
 	MantenimientoParticipante fpar;
+	ConsultaParticipante conpar;
+	
 	MantenimientoPropuestas fpro;
+	ConsultaPropuesta conpro;
+	
 	MantenimientoEvaluador feva;
+	ConsultaEvaluador coneva;
 	private JPanel contentPane;
 	private JButton btnMantenimiento;
 
@@ -108,6 +113,9 @@ public class frmBienvenido extends JFrame {
 					fpar.setVisible(true);
 					fpro.setVisible(false);
 					feva.setVisible(false);
+					conpar.setVisible(false);
+					conpro.setVisible(false);
+					coneva.setVisible(false);
 				}
 			}
 		});
@@ -135,6 +143,9 @@ public class frmBienvenido extends JFrame {
 					fpro.setVisible(true);
 					fpar.setVisible(false);
 					feva.setVisible(false);
+					conpar.setVisible(false);
+					conpro.setVisible(false);
+					coneva.setVisible(false);
 				}
 			}
 		});
@@ -163,6 +174,9 @@ public class frmBienvenido extends JFrame {
 					feva.setVisible(true);
 					fpro.setVisible(false);
 					fpar.setVisible(false);
+					conpar.setVisible(false);
+					conpro.setVisible(false);
+					coneva.setVisible(false);
 				}
 			}
 		});
@@ -178,6 +192,25 @@ public class frmBienvenido extends JFrame {
 		panelLateral.add(btnManEvaluador);
 		
 		JButton btnConParticipante = new JButton("    Participante");
+		btnConParticipante.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(conpar == null || conpar.isClosed()) {
+					conpar = new ConsultaParticipante();
+					conpar.setBounds(0,0,957,627);
+					desktopPane.add(conpar);
+					conpar.show();
+				}
+				else {
+					conpar.setVisible(true);
+					conpro.setVisible(false);
+					coneva.setVisible(false);
+					fpar.setVisible(false);
+					fpro.setVisible(false);
+					feva.setVisible(false);
+				}
+			}
+		});
 		btnConParticipante.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnConParticipante.setVisible(false);
 		btnConParticipante.setIcon(new ImageIcon(frmBienvenido.class.getResource("/img/headhunting.png")));
@@ -190,6 +223,25 @@ public class frmBienvenido extends JFrame {
 		panelLateral.add(btnConParticipante);
 		
 		JButton btnConPropuestas = new JButton("    Propuesta");
+		btnConPropuestas.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(conpro == null || conpro.isClosed()) {
+					conpro = new ConsultaPropuesta();
+					conpro.setBounds(0,0,957,627);
+					desktopPane.add(conpro);
+					conpro.show();
+				}
+				else {
+					conpar.setVisible(false);
+					conpro.setVisible(true);
+					coneva.setVisible(false);
+					fpar.setVisible(false);
+					fpro.setVisible(false);
+					feva.setVisible(false);
+				}
+			}
+		});
 		btnConPropuestas.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnConPropuestas.setVisible(false);
 		btnConPropuestas.setIcon(new ImageIcon(frmBienvenido.class.getResource("/img/open-book.png")));
@@ -203,6 +255,25 @@ public class frmBienvenido extends JFrame {
 		
 		
 		JButton btnConEvaluador = new JButton("    Evaluador");
+		btnConEvaluador.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(coneva == null || conpar.isClosed()) {
+					coneva = new ConsultaEvaluador();
+					coneva.setBounds(0,0,957,627);
+					desktopPane.add(coneva);
+					coneva.show();
+				}
+				else {
+					conpar.setVisible(false);
+					conpro.setVisible(false);
+					coneva.setVisible(true);
+					fpar.setVisible(false);
+					fpro.setVisible(false);
+					feva.setVisible(false);
+				}
+			}
+		});
 		btnConEvaluador.setVisible(false);
 		btnConEvaluador.setIcon(new ImageIcon(frmBienvenido.class.getResource("/img/headhunter.png")));
 		btnConEvaluador.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -354,6 +425,12 @@ public class frmBienvenido extends JFrame {
 						btnConsulta.setBounds(0,222,177,37);
 						btnMantenimiento.setBounds(0,183,188,37);
 						btnReporte.setBounds(0,261,158,37);
+						fpar.setVisible(false);
+						fpro.setVisible(false);
+						feva.setVisible(false);
+						conpar.setVisible(false);
+						conpro.setVisible(false);
+						coneva.setVisible(false);
 					}
 				}
 				catch(Exception ex){
@@ -405,7 +482,12 @@ public class frmBienvenido extends JFrame {
 						btnConPropuestas.setVisible(false);
 						btnReporte.setBounds(-1,370,177,37);
 						btnConsulta.setBounds(0,329,177,37);
-						
+						fpar.setVisible(false);
+						fpro.setVisible(false);
+						feva.setVisible(false);
+						conpar.setVisible(false);
+						conpro.setVisible(false);
+						coneva.setVisible(false);
 					}
 
 				}
