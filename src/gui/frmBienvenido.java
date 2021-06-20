@@ -35,6 +35,10 @@ public class frmBienvenido extends JFrame {
 	
 	MantenimientoEvaluador feva;
 	ConsultaEvaluador coneva;
+	
+	MantenimientoContratados fcon;
+	ConsultaContratados concont;
+	
 	private JPanel contentPane;
 	private JButton btnMantenimiento;
 
@@ -93,6 +97,76 @@ public class frmBienvenido extends JFrame {
 		panelConsulta.setBounds(187, 222, 7, 32);
 		panelLateral.add(panelConsulta);
 		
+		JButton btnManContratados = new JButton("    Contratados ");
+		btnManContratados.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(fcon == null || fpar.isClosed()) {
+					fcon = new MantenimientoContratados();
+					fcon.setBounds(0,0,957,627);
+					desktopPane.add(fcon);
+					fcon.show();
+				}
+				else {
+					fpar.setVisible(false);
+					fpro.setVisible(false);
+					feva.setVisible(false);
+					fcon.setVisible(true);
+					conpar.setVisible(false);
+					conpro.setVisible(false);
+					coneva.setVisible(false);
+					concont.setVisible(false);
+					
+				}
+			}
+		});
+		btnManContratados.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnManContratados.setIcon(new ImageIcon(frmBienvenido.class.getResource("/img/team.png")));
+		btnManContratados.setVisible(false);
+		btnManContratados.setHorizontalAlignment(SwingConstants.LEFT);
+		btnManContratados.setForeground(Color.WHITE);
+		btnManContratados.setFocusPainted(false);
+		btnManContratados.setBorderPainted(false);
+		btnManContratados.setBackground(new Color(36, 46, 66));
+		btnManContratados.setBounds(24, 332, 158, 37);
+		panelLateral.add(btnManContratados);
+		
+		JButton btnConContratados = new JButton("    Contratados");
+		btnConContratados.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(concont == null || concont.isClosed()) {
+					concont = new ConsultaContratados();
+					concont.setBounds(0,0,957,627);
+					desktopPane.add(concont);
+					concont.show();
+				}
+				else {
+					fpar.setVisible(false);
+					fpro.setVisible(false);
+					feva.setVisible(false);
+					fcon.setVisible(false);
+					conpar.setVisible(false);
+					conpro.setVisible(false);
+					coneva.setVisible(false);
+					concont.setVisible(true);
+					
+				}
+			}
+		});
+		btnConContratados.setVisible(false);
+		btnConContratados.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		btnConContratados.setIcon(new ImageIcon(frmBienvenido.class.getResource("/img/team.png")));
+		btnConContratados.setHorizontalAlignment(SwingConstants.LEFT);
+		btnConContratados.setForeground(Color.WHITE);
+		btnConContratados.setFocusPainted(false);
+		btnConContratados.setBorderPainted(false);
+		btnConContratados.setBackground(new Color(36, 46, 66));
+		btnConContratados.setBounds(24, 362, 165, 37);
+		panelLateral.add(btnConContratados);
+
+
+		
 		JPanel panelReporte = new JPanel();
 		panelReporte.setVisible(false);
 		panelReporte.setBackground(new Color(209, 8, 50));
@@ -113,9 +187,12 @@ public class frmBienvenido extends JFrame {
 					fpar.setVisible(true);
 					fpro.setVisible(false);
 					feva.setVisible(false);
+					fcon.setVisible(false);
 					conpar.setVisible(false);
 					conpro.setVisible(false);
 					coneva.setVisible(false);
+					concont.setVisible(false);
+					
 				}
 			}
 		});
@@ -143,9 +220,11 @@ public class frmBienvenido extends JFrame {
 					fpro.setVisible(true);
 					fpar.setVisible(false);
 					feva.setVisible(false);
+					fcon.setVisible(false);
 					conpar.setVisible(false);
 					conpro.setVisible(false);
 					coneva.setVisible(false);
+					concont.setVisible(false);
 				}
 			}
 		});
@@ -174,9 +253,11 @@ public class frmBienvenido extends JFrame {
 					feva.setVisible(true);
 					fpro.setVisible(false);
 					fpar.setVisible(false);
+					fcon.setVisible(false);
 					conpar.setVisible(false);
 					conpro.setVisible(false);
 					coneva.setVisible(false);
+					concont.setVisible(false);
 				}
 			}
 		});
@@ -205,6 +286,8 @@ public class frmBienvenido extends JFrame {
 					conpar.setVisible(true);
 					conpro.setVisible(false);
 					coneva.setVisible(false);
+					concont.setVisible(false);
+					fcon.setVisible(false);
 					fpar.setVisible(false);
 					fpro.setVisible(false);
 					feva.setVisible(false);
@@ -235,8 +318,10 @@ public class frmBienvenido extends JFrame {
 				else {
 					conpar.setVisible(false);
 					conpro.setVisible(true);
+					concont.setVisible(false);
 					coneva.setVisible(false);
 					fpar.setVisible(false);
+					fcon.setVisible(false);
 					fpro.setVisible(false);
 					feva.setVisible(false);
 				}
@@ -268,6 +353,8 @@ public class frmBienvenido extends JFrame {
 					conpar.setVisible(false);
 					conpro.setVisible(false);
 					coneva.setVisible(true);
+					concont.setVisible(false);
+					fcon.setVisible(false);
 					fpar.setVisible(false);
 					fpro.setVisible(false);
 					feva.setVisible(false);
@@ -312,15 +399,14 @@ public class frmBienvenido extends JFrame {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnConsulta.setBackground(new Color (241,57,83));
-			
-				btnConsulta.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\discovery.png"));
+
 				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnConsulta.setBackground(new Color (36, 46, 66));
 				btnConsulta.setForeground(Color.white);
-				btnConsulta.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\discovery.png"));
+
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -333,11 +419,13 @@ public class frmBienvenido extends JFrame {
 						btnManParticipante.setVisible(false);
 						btnManPropuesta.setVisible(false);
 						btnManEvaluador.setVisible(false);
-						btnConsulta.setBounds(0,222,177,37);	
+						btnManContratados.setVisible(false);
+						btnConsulta.setBounds(0,222,177,37);
+						btnConContratados.setVisible(true);
 						btnConParticipante.setVisible(true);
 						btnConPropuestas.setVisible(true);
 						btnConEvaluador.setVisible(true);
-						btnReporte.setBounds(0,380,177,37);
+						btnReporte.setBounds(0,400,177,37);
 					}
 				}
 				catch(Exception ex){
@@ -359,14 +447,13 @@ public class frmBienvenido extends JFrame {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnReporte.setBackground(new Color (241,57,83));
-				
-				btnReporte.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\checklist.png"));
+	
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnReporte.setBackground(new Color (36, 46, 66));
 				btnReporte.setForeground(Color.white);
-				btnReporte.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\checklist.png"));
+
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -378,12 +465,15 @@ public class frmBienvenido extends JFrame {
 						panelReporte.setVisible(true);
 						btnManParticipante.setVisible(false);
 						btnManPropuesta.setVisible(false);
+						btnManContratados.setVisible(false);
 						btnManEvaluador.setVisible(false);
 						btnConEvaluador.setVisible(false);
+						btnConContratados.setVisible(false);
 						btnConParticipante.setVisible(false);
 						btnConPropuestas.setVisible(false);
 						btnReporte.setBounds(0,261,158,37);
 						btnConsulta.setBounds(0,222,177,37);
+
 					}
 				}
 				catch(Exception ex){
@@ -400,13 +490,13 @@ public class frmBienvenido extends JFrame {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnHome.setBackground(new Color (241,57,83));
-				btnHome.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\inicio.png"));
+				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnHome.setBackground(new Color (36, 46, 66));
 				btnHome.setForeground(Color.white);
-				btnHome.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\inicio.png"));
+				
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -418,9 +508,11 @@ public class frmBienvenido extends JFrame {
 						panelReporte.setVisible(false);
 						btnManParticipante.setVisible(false);
 						btnManPropuesta.setVisible(false);
+						btnManContratados.setVisible(false);
 						btnManEvaluador.setVisible(false);
 						btnConEvaluador.setVisible(false);
 						btnConParticipante.setVisible(false);
+						btnConContratados.setVisible(false);
 						btnConPropuestas.setVisible(false);
 						btnConsulta.setBounds(0,222,177,37);
 						btnMantenimiento.setBounds(0,183,188,37);
@@ -428,6 +520,8 @@ public class frmBienvenido extends JFrame {
 						fpar.setVisible(false);
 						fpro.setVisible(false);
 						feva.setVisible(false);
+						fcon.setVisible(false);
+						concont.setVisible(false);
 						conpar.setVisible(false);
 						conpro.setVisible(false);
 						coneva.setVisible(false);
@@ -458,13 +552,13 @@ public class frmBienvenido extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				btnMantenimiento.setBackground(new Color (241,57,83));
 			
-				btnMantenimiento.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\guide.png"));
+				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnMantenimiento.setBackground(new Color (36, 46, 66));
 				btnMantenimiento.setForeground(Color.white);
-				btnMantenimiento.setIcon(new ImageIcon("D:\\Steff\\Proyectos\\ManagementSystemLicenses-master\\src\\img\\guide.png"));
+
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -477,17 +571,14 @@ public class frmBienvenido extends JFrame {
 						btnManParticipante.setVisible(true);
 						btnManPropuesta.setVisible(true);
 						btnManEvaluador.setVisible(true);
+						btnManContratados.setVisible(true);
 						btnConEvaluador.setVisible(false);
 						btnConParticipante.setVisible(false);
+						btnConContratados.setVisible(false);
 						btnConPropuestas.setVisible(false);
-						btnReporte.setBounds(-1,370,177,37);
-						btnConsulta.setBounds(0,329,177,37);
-						fpar.setVisible(false);
-						fpro.setVisible(false);
-						feva.setVisible(false);
-						conpar.setVisible(false);
-						conpro.setVisible(false);
-						coneva.setVisible(false);
+						btnReporte.setBounds(-1,425,177,37);
+						btnConsulta.setBounds(0,375,177,37);
+					
 					}
 
 				}
@@ -506,6 +597,7 @@ public class frmBienvenido extends JFrame {
 		btnMantenimiento.setBorderPainted(false);
 		btnMantenimiento.setBounds(0, 183, 188, 37);
 		panelLateral.add(btnMantenimiento);
+		
 
 		
 

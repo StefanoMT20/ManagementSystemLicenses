@@ -29,7 +29,7 @@ public class ConsultaEvaluador extends JInternalFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTable tableParticipante;
+	
 	private JTable tableEvaluador;
 
 	/**
