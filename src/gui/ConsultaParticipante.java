@@ -30,6 +30,11 @@ public class ConsultaParticipante extends JInternalFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTable tableParticipante;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
 
 	/**
 	 * Launch the application.
@@ -99,7 +104,7 @@ public class ConsultaParticipante extends JInternalFrame {
 		
 		JButton btnBuscar = new JButton("    Buscar");
 		btnBuscar.setHorizontalAlignment(SwingConstants.LEFT);
-		btnBuscar.setBounds(57, 274, 131, 39);
+		btnBuscar.setBounds(752, 116, 131, 39);
 		btnBuscar.setIcon(new ImageIcon(ConsultaParticipante.class.getResource("/img/discovery.png")));
 		btnBuscar.setForeground(new Color(253, 245, 230));
 		btnBuscar.setBorderPainted(false);
@@ -107,12 +112,59 @@ public class ConsultaParticipante extends JInternalFrame {
 		getContentPane().add(btnBuscar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(57, 355, 826, 219);
+		scrollPane.setBounds(25, 244, 910, 329);
 		getContentPane().add(scrollPane);
 		
 		tableParticipante = new JTable();
 		tableParticipante.setFillsViewportHeight(true);
 		scrollPane.setColumnHeaderView(tableParticipante);
+		tableParticipante.setBorder(new LineBorder(new Color(227, 227, 227), 2, true));
+		tableParticipante.setBackground(new Color(245, 245, 220));
+		
+		JLabel lblNewLabel_2_2 = new JLabel("DNI");
+		lblNewLabel_2_2.setBounds(259, 77, 123, 14);
+		getContentPane().add(lblNewLabel_2_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(259, 97, 144, 20);
+		getContentPane().add(textField_3);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("Email");
+		lblNewLabel_3_1.setBounds(259, 128, 166, 14);
+		getContentPane().add(lblNewLabel_3_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(259, 153, 144, 20);
+		getContentPane().add(textField_4);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Direcci\u00F3n");
+		lblNewLabel_2_1.setBounds(259, 184, 123, 14);
+		getContentPane().add(lblNewLabel_2_1);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(259, 200, 144, 20);
+		getContentPane().add(textField_5);
+		
+		JLabel lblNewLabel_3_2 = new JLabel("Celular");
+		lblNewLabel_3_2.setBounds(470, 77, 166, 14);
+		getContentPane().add(lblNewLabel_3_2);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(470, 97, 144, 20);
+		getContentPane().add(textField_6);
+		
+		JLabel lblNewLabel_3_2_1 = new JLabel("Nombre de Propuesta");
+		lblNewLabel_3_2_1.setBounds(470, 128, 166, 14);
+		getContentPane().add(lblNewLabel_3_2_1);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(470, 153, 144, 20);
+		getContentPane().add(textField_7);
 
 	}
 }

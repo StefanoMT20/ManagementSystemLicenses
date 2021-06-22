@@ -26,6 +26,12 @@ public class MantenimientoPropuestas extends JInternalFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTable tablePropuestas;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
 
 	/**
 	 * Launch the application.
@@ -66,15 +72,15 @@ public class MantenimientoPropuestas extends JInternalFrame {
 		getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("C\u00F3digo de Propuesta");
-		lblNewLabel_1.setBounds(57, 77, 109, 14);
+		lblNewLabel_1.setBounds(57, 77, 166, 14);
 		getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre de Propuesta");
-		lblNewLabel_2.setBounds(57, 128, 123, 14);
+		lblNewLabel_2.setBounds(57, 128, 166, 14);
 		getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("C\u00F3digo del Participante");
-		lblNewLabel_3.setBounds(57, 184, 131, 14);
+		lblNewLabel_3.setBounds(57, 184, 166, 14);
 		getContentPane().add(lblNewLabel_3);
 		
 		textField = new JTextField();
@@ -93,16 +99,16 @@ public class MantenimientoPropuestas extends JInternalFrame {
 		textField_2.setColumns(10);
 		
 		JButton btnRegistrar = new JButton("    Registrar");
-		btnRegistrar.setBounds(57, 274, 144, 39);
+		btnRegistrar.setBounds(735, 77, 153, 39);
 		btnRegistrar.setForeground(new Color(253, 245, 230));
 		btnRegistrar.setBorderPainted(false);
-		btnRegistrar.setIcon(new ImageIcon(MantenimientoPropuestas.class.getResource("/img/open-book.png")));
+		btnRegistrar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/open-book.png")));
 		btnRegistrar.setBackground(new Color(220, 20, 60));
 		getContentPane().add(btnRegistrar);
 		
 		JButton btnEliminar = new JButton("    Eliminar");
-		btnEliminar.setBounds(373, 274, 131, 39);
-		btnEliminar.setIcon(new ImageIcon(MantenimientoPropuestas.class.getResource("/img/delete (2).png")));
+		btnEliminar.setBounds(735, 180, 153, 39);
+		btnEliminar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/delete (2).png")));
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -113,15 +119,15 @@ public class MantenimientoPropuestas extends JInternalFrame {
 		getContentPane().add(btnEliminar);
 		
 		JButton btnModificar = new JButton("    Modificar");
-		btnModificar.setBounds(220, 274, 131, 39);
-		btnModificar.setIcon(new ImageIcon(MantenimientoPropuestas.class.getResource("/img/edit (1).png")));
+		btnModificar.setBounds(735, 128, 153, 39);
+		btnModificar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/edit (1).png")));
 		btnModificar.setForeground(new Color(253, 245, 230));
 		btnModificar.setBorderPainted(false);
 		btnModificar.setBackground(new Color(220, 20, 60));
 		getContentPane().add(btnModificar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(57, 355, 826, 219);
+		scrollPane.setBounds(25, 244, 910, 329);
 		getContentPane().add(scrollPane);
 		
 		tablePropuestas = new JTable();
@@ -129,6 +135,61 @@ public class MantenimientoPropuestas extends JInternalFrame {
 		scrollPane.setColumnHeaderView(tablePropuestas);
 		tablePropuestas.setBorder(new LineBorder(new Color(227, 227, 227), 2, true));
 		tablePropuestas.setBackground(new Color(245, 245, 220));
+		
+		JLabel lblNewLabel_2_2 = new JLabel("Fecha de Inicio");
+		lblNewLabel_2_2.setBounds(265, 77, 123, 14);
+		getContentPane().add(lblNewLabel_2_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(265, 97, 144, 20);
+		getContentPane().add(textField_3);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("Fecha Final");
+		lblNewLabel_3_1.setBounds(265, 128, 166, 14);
+		getContentPane().add(lblNewLabel_3_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(265, 153, 144, 20);
+		getContentPane().add(textField_4);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Presupuesto");
+		lblNewLabel_2_1.setBounds(265, 184, 123, 14);
+		getContentPane().add(lblNewLabel_2_1);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(265, 200, 144, 20);
+		getContentPane().add(textField_5);
+		
+		JLabel lblNewLabel_2_3 = new JLabel("Puntaje Propuesta T\u00E9cnica");
+		lblNewLabel_2_3.setBounds(487, 77, 194, 14);
+		getContentPane().add(lblNewLabel_2_3);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(487, 102, 144, 20);
+		getContentPane().add(textField_6);
+		
+		JLabel lblNewLabel_3_2 = new JLabel("Puntaje Propuesta Econ\u00F3mica");
+		lblNewLabel_3_2.setBounds(487, 133, 194, 14);
+		getContentPane().add(lblNewLabel_3_2);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(487, 149, 144, 20);
+		getContentPane().add(textField_7);
+		
+		JLabel lblNewLabel_3_2_1 = new JLabel("Puntaje Final");
+		lblNewLabel_3_2_1.setBounds(487, 184, 166, 14);
+		getContentPane().add(lblNewLabel_3_2_1);
+		
+		textField_8 = new JTextField();
+		textField_8.setEnabled(false);
+		textField_8.setColumns(10);
+		textField_8.setBounds(487, 200, 144, 20);
+		getContentPane().add(textField_8);
 
 	}
 		

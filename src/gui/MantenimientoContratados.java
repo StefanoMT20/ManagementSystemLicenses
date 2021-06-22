@@ -105,16 +105,16 @@ public class MantenimientoContratados extends JInternalFrame {
 		getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
-		JButton btnNewButton = new JButton("    Registrar");
-		btnNewButton.setBounds(735, 77, 131, 39);
-		btnNewButton.setForeground(new Color(253, 245, 230));
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/open-book.png")));
-		btnNewButton.setBackground(new Color(220, 20, 60));
-		getContentPane().add(btnNewButton);
+		JButton btnRegistrar = new JButton("    Registrar");
+		btnRegistrar.setBounds(735, 77, 153, 39);
+		btnRegistrar.setForeground(new Color(253, 245, 230));
+		btnRegistrar.setBorderPainted(false);
+		btnRegistrar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/open-book.png")));
+		btnRegistrar.setBackground(new Color(220, 20, 60));
+		getContentPane().add(btnRegistrar);
 		
 		JButton btnEliminar = new JButton("    Eliminar");
-		btnEliminar.setBounds(735, 180, 131, 39);
+		btnEliminar.setBounds(735, 180, 153, 39);
 		btnEliminar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/delete (2).png")));
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -126,7 +126,7 @@ public class MantenimientoContratados extends JInternalFrame {
 		getContentPane().add(btnEliminar);
 		
 		JButton btnModificar = new JButton("    Modificar");
-		btnModificar.setBounds(735, 128, 131, 39);
+		btnModificar.setBounds(735, 128, 153, 39);
 		btnModificar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/edit (1).png")));
 		btnModificar.setForeground(new Color(253, 245, 230));
 		btnModificar.setBorderPainted(false);
@@ -135,7 +135,7 @@ public class MantenimientoContratados extends JInternalFrame {
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(53, 244, 894, 329);
+		scrollPane.setBounds(25, 244, 910, 329);
 		getContentPane().add(scrollPane);
 		
 		tableContratados = new JTable();

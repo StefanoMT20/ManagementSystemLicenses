@@ -20,11 +20,12 @@ import javax.swing.border.LineBorder;
 public class MantenimientoEvaluador extends JInternalFrame {
 	private JComponent Barra = ((javax.swing.plaf.basic.BasicInternalFrameUI)getUI()).getNorthPane();
 	private Dimension DimensionBarra = null;
-	
+	private JTable tableEvaluadores;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTable tableEvaluadores;
+	private JTextField textField_3;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -65,43 +66,16 @@ public class MantenimientoEvaluador extends JInternalFrame {
 		lblNewLabel.setFont(new Font("Montserrat", Font.BOLD, 20));
 		getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("C\u00F3digo de Evaluador");
-		lblNewLabel_1.setBounds(57, 77, 109, 14);
-		getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Puesto de Evaluador");
-		lblNewLabel_2.setBounds(57, 128, 123, 14);
-		getContentPane().add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Código de la propuesta asignada");
-		lblNewLabel_3.setBounds(57, 184, 166, 14);
-		getContentPane().add(lblNewLabel_3);
-		
-		textField = new JTextField();
-		textField.setBounds(57, 97, 144, 20);
-		getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(57, 153, 144, 20);
-		getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(57, 200, 144, 20);
-		getContentPane().add(textField_2);
-		textField_2.setColumns(10);
-		
-		JButton btnNewButton = new JButton("    Registrar");
-		btnNewButton.setBounds(57, 274, 144, 39);
-		btnNewButton.setForeground(new Color(253, 245, 230));
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/open-book.png")));
-		btnNewButton.setBackground(new Color(220, 20, 60));
-		getContentPane().add(btnNewButton);
+		JButton btnRegistrar = new JButton("    Registrar");
+		btnRegistrar.setBounds(735, 77, 153, 39);
+		btnRegistrar.setForeground(new Color(253, 245, 230));
+		btnRegistrar.setBorderPainted(false);
+		btnRegistrar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/open-book.png")));
+		btnRegistrar.setBackground(new Color(220, 20, 60));
+		getContentPane().add(btnRegistrar);
 		
 		JButton btnEliminar = new JButton("    Eliminar");
-		btnEliminar.setBounds(373, 274, 131, 39);
+		btnEliminar.setBounds(735, 180, 153, 39);
 		btnEliminar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/delete (2).png")));
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -113,7 +87,7 @@ public class MantenimientoEvaluador extends JInternalFrame {
 		getContentPane().add(btnEliminar);
 		
 		JButton btnModificar = new JButton("    Modificar");
-		btnModificar.setBounds(220, 274, 131, 39);
+		btnModificar.setBounds(735, 128, 153, 39);
 		btnModificar.setIcon(new ImageIcon(MantenimientoEvaluador.class.getResource("/img/edit (1).png")));
 		btnModificar.setForeground(new Color(253, 245, 230));
 		btnModificar.setBorderPainted(false);
@@ -121,14 +95,60 @@ public class MantenimientoEvaluador extends JInternalFrame {
 		getContentPane().add(btnModificar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(57, 355, 826, 219);
+		scrollPane.setBounds(25, 244, 910, 329);
 		getContentPane().add(scrollPane);
 		
 		tableEvaluadores = new JTable();
+		tableEvaluadores.setBackground(new Color(255, 228, 181));
 		tableEvaluadores.setFillsViewportHeight(true);
-		scrollPane.setColumnHeaderView(tableEvaluadores);
+		scrollPane.setViewportView(tableEvaluadores);
 		tableEvaluadores.setBorder(new LineBorder(new Color(227, 227, 227), 2, true));
 		tableEvaluadores.setBackground(new Color(245, 245, 220));
+		
+		JLabel lblNewLabel_1_1 = new JLabel("C\u00F3digo de Evaluador");
+		lblNewLabel_1_1.setBounds(49, 77, 164, 14);
+		getContentPane().add(lblNewLabel_1_1);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(49, 102, 144, 20);
+		getContentPane().add(textField);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Puesto de Evaluador");
+		lblNewLabel_2_1.setBounds(49, 162, 164, 14);
+		getContentPane().add(lblNewLabel_2_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(49, 180, 144, 20);
+		getContentPane().add(textField_1);
+		
+		JLabel lblNewLabel_3_1_1 = new JLabel("Nombre de Evaluador");
+		lblNewLabel_3_1_1.setBounds(242, 162, 187, 14);
+		getContentPane().add(lblNewLabel_3_1_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(242, 180, 144, 20);
+		getContentPane().add(textField_2);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("C\u00F3digo de la propuesta asignada");
+		lblNewLabel_3_1.setBounds(242, 77, 218, 14);
+		getContentPane().add(lblNewLabel_3_1);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(242, 102, 144, 20);
+		getContentPane().add(textField_3);
+		
+		JLabel lblNewLabel_3_1_2 = new JLabel("Apellido del Evaluador");
+		lblNewLabel_3_1_2.setBounds(453, 77, 218, 14);
+		getContentPane().add(lblNewLabel_3_1_2);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(456, 102, 144, 20);
+		getContentPane().add(textField_4);
 
 	}
 

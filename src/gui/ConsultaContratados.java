@@ -109,7 +109,7 @@ public class ConsultaContratados extends JInternalFrame {
 		
 		JButton btnBuscar = new JButton("    Buscar");
 		btnBuscar.setHorizontalAlignment(SwingConstants.LEFT);
-		btnBuscar.setBounds(789, 128, 131, 39);
+		btnBuscar.setBounds(752, 116, 131, 39);
 		btnBuscar.setIcon(new ImageIcon(ConsultaParticipante.class.getResource("/img/discovery.png")));
 		btnBuscar.setForeground(new Color(253, 245, 230));
 		btnBuscar.setBorderPainted(false);
@@ -117,7 +117,7 @@ public class ConsultaContratados extends JInternalFrame {
 		getContentPane().add(btnBuscar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(53, 244, 894, 329);
+		scrollPane.setBounds(25, 244, 910, 329);
 		getContentPane().add(scrollPane);
 		
 		tableContratados = new JTable();

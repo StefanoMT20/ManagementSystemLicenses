@@ -78,6 +78,11 @@ public class frmBienvenido extends JFrame {
 		desktopPane.setBackground(Color.WHITE);
 		contentPane.add(desktopPane);
 		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(frmBienvenido.class.getResource("/img/dash.png")));
+		lblNewLabel.setBounds(10, 23, 940, 540);
+		desktopPane.add(lblNewLabel);
+		
 
 		
 		JPanel panelLateral = new JPanel();
@@ -101,7 +106,7 @@ public class frmBienvenido extends JFrame {
 		btnManContratados.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(fcon == null || fpar.isClosed()) {
+				if(fcon == null || fcon.isClosed()) {
 					fcon = new MantenimientoContratados();
 					fcon.setBounds(0,0,957,627);
 					desktopPane.add(fcon);
