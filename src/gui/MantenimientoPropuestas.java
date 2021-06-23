@@ -193,6 +193,6 @@ public class MantenimientoPropuestas extends JInternalFrame {
 
 	}
 		
-	}
+}
 
 

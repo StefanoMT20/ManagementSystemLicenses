@@ -17,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+import javax.swing.JComboBox;
 
 public class ConsultaEvaluador extends JInternalFrame {
 
@@ -27,11 +28,6 @@ public class ConsultaEvaluador extends JInternalFrame {
 	private Dimension DimensionBarra = null;
 	
 	private JTable tableEvaluador;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -74,7 +70,7 @@ public class ConsultaEvaluador extends JInternalFrame {
 		
 		JButton btnBuscar = new JButton("    Buscar");
 		btnBuscar.setHorizontalAlignment(SwingConstants.LEFT);
-		btnBuscar.setBounds(752, 116, 131, 39);
+		btnBuscar.setBounds(730, 113, 131, 39);
 		btnBuscar.setIcon(new ImageIcon(ConsultaParticipante.class.getResource("/img/discovery.png")));
 		btnBuscar.setForeground(new Color(253, 245, 230));
 		btnBuscar.setBorderPainted(false);
@@ -92,51 +88,13 @@ public class ConsultaEvaluador extends JInternalFrame {
 		tableEvaluador.setBorder(new LineBorder(new Color(227, 227, 227), 2, true));
 		tableEvaluador.setBackground(new Color(245, 245, 220));
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(239, 98, 144, 20);
-		getContentPane().add(textField_3);
-		
-		JLabel lblNewLabel_3_1 = new JLabel("C\u00F3digo de la propuesta asignada");
-		lblNewLabel_3_1.setBounds(239, 78, 218, 14);
-		getContentPane().add(lblNewLabel_3_1);
-		
 		JLabel lblNewLabel_2_1 = new JLabel("Puesto de Evaluador");
-		lblNewLabel_2_1.setBounds(65, 158, 164, 14);
+		lblNewLabel_2_1.setBounds(49, 125, 164, 14);
 		getContentPane().add(lblNewLabel_2_1);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(65, 178, 144, 20);
-		getContentPane().add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(65, 98, 144, 20);
-		getContentPane().add(textField_5);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("C\u00F3digo de Evaluador");
-		lblNewLabel_1_1.setBounds(65, 78, 164, 14);
-		getContentPane().add(lblNewLabel_1_1);
-		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(239, 178, 144, 20);
-		getContentPane().add(textField);
-		
-		JLabel lblNewLabel_3_1_1 = new JLabel("Nombre de Evaluador");
-		lblNewLabel_3_1_1.setBounds(239, 158, 187, 14);
-		getContentPane().add(lblNewLabel_3_1_1);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(440, 98, 144, 20);
-		getContentPane().add(textField_1);
-		
-		JLabel lblNewLabel_3_1_2 = new JLabel("Apellido del Evaluador");
-		lblNewLabel_3_1_2.setBounds(440, 78, 218, 14);
-		getContentPane().add(lblNewLabel_3_1_2);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(219, 121, 410, 22);
+		getContentPane().add(comboBox);
 
 	}
-
 }
