@@ -78,11 +78,6 @@ public class frmBienvenido extends JFrame {
 		desktopPane.setBackground(Color.WHITE);
 		contentPane.add(desktopPane);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(frmBienvenido.class.getResource("/img/dash.png")));
-		lblNewLabel.setBounds(10, 23, 940, 540);
-		desktopPane.add(lblNewLabel);
-		
 
 		
 		JPanel panelLateral = new JPanel();

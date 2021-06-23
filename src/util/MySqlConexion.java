@@ -12,7 +12,7 @@ public class MySqlConexion {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String url,user,pass;
-			url="jdbc:mysql://localhost/db_proyecto?serverTimezone=UTC";
+			url="jdbc:mysql://localhost/db_proyectolp1?serverTimezone=UTC";
 			user="root";
 			pass="mysql";
 			cn=DriverManager.getConnection(url,user,pass);
