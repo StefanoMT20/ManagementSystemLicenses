@@ -1,3 +1,6 @@
+/CBOS/
+/Controladores/
+/Interfaces/
 /clases/
 /conectorBD/
 /gui/
@@ -5,6 +8,3 @@
 /librerias/
 /mantenimiento/
 /util/
-/Interfaces/
-/Controladores/
-/CBOS/
